@@ -1,0 +1,4 @@
+s->next=p->next;
+p->next=prev;
+prev=cur;
+cur=next;
