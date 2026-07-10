@@ -1,6 +1,6 @@
 链表反转                     图的优先深度搜索（DFS）
 s->next=p->next；           visited[v]=true;
-p->next=prew;               for(int u;adj[v]){
+p->next=prev;               for(int u;adj[v]){
 prew=cur;                   if(!visit=[u]) DFS(u,visited,adj);}
 cur=next;                                
                                              二叉树遍历前序（根左右）            
