@@ -5,8 +5,8 @@ prew=cur;                   if(!visit=[u]) DFS(u,visited,adj);}
 cur=next;                                
                                              二叉树遍历前序（根左右）            
 合并有序链表                                  void preorder(TreeNode*root){
-if（!=l1）return l2;                         if(!root)return;
-if(!=l2) return l1;                          visit(root);
+if（!l1）return l2;                         if(!root)return;
+if(!l2) return l1;                          visit(root);
 if(l1->val<=l2->val){                       preorder(root->left);
 l1->next= mergeTwolists(l1-next,l2);        preorder(root->right);}  
 return l1;}
