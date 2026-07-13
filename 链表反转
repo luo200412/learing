@@ -1,38 +1,38 @@
-链表反转                     图的优先深度搜索（DFS）
-s->next=p->next；           visited[v]=true;
-p->next=prev;               for(int u;adj[v]){
-prew=cur;                   if(!visit=[u]) DFS(u,visited,adj);}
-cur=next;                                
-                                             二叉树遍历前序（根左右）            
-合并有序链表                                  void preorder(TreeNode*root){
-if（!l1）return l2;                         if(!root)return;
-if(!l2) return l1;                          visit(root);
-if(l1->val<=l2->val){                       preorder(root->left);
-l1->next= mergeTwolists(l1-next,l2);        preorder(root->right);}  
-return l1;}
-else{
-l2->next=mergeTwolists(l1,l2->next);           中序（左根右）
-return l2;}                                    void inorder(TreeNode*root){
-                                                if(!root)return;
-快速排序（partition）                            inorder(root->left);
-int pivot=arr[high];                             visit(root);
-int i=low-1;                                    inorder(root->right);} 
-for(int j=low;j<high;j++){
-if(arr[j]<=pivot){
-i++;                                           
-swap(arr[i],arr[j]);}}                         后序（左右根）
-swap(arr[i+1],arr[high]);                       void postorder(TreeNode*root){  
-return i+1;                                     if(!root)return;
-                                               postorder(root->left);
-                                               postorder(root->right);  
-堆的向下调整（heapify）                           visit(root);}
-int largest=i;
-int left=2*i+1;
-int right=2*i+2;
-if(left<n && arr[left]<arr[largest]) left=largest;
-if(right<n && arr[right]<arr[largest]) right=largest;
-if(largest!=i){
-swap(arr[i],arr[largest]);
-heapify(arr,n,largest)}
+链表反转                                                            后序（左右根）                                             图的DFS      
+ListNode*reverselist(ListNode*head){                             void postorder(TreeNode*root){                             void dfs(vector<vector<int>>&garph){                                                                                 
+ListNode*prev=nullptr;                                            if(!root)return;                                          visited[v]=ture;
+ListNode*cur=head;                                                postorder(root->left);                                    for(int u:garph[v]){
+while(cur){                                                       postorder(root->right);                                   if(!visited[u]){
+ListNode*next=cur->next;                                          visit root;}                                              dfs(graph,u,visited);}}}
+cur->next=prev;
+prev=cur;
+cur=next;                                                        快速排序（partition）
+return prev;}                                                    int partition(vrctor<int>&arr,int low,int high){
+                                                                 int pivot=arr[high];
+合并有序链表                                                       int i=low-1;
+ListNode*mergeTwolist(ListNode*l1,ListNode*l2){                  for(int j=low;j<high;j++){
+if(!l1)return l2;                                                if(arr[j]<=pivot){    
+if(!l2)return l1;                                                i++;
+if(l1->val<=l2->val){                                            swap(arr[i],arr[j]);}}
+l1->next=mergeTwoLists(l1->next,l2);                             swap(arr[j+1],arr[high]);
+return l1;}                                                      return i+1;}
+else{       
+l2->next=mergeTwoLists(l1,l2->next);
+return l2;}}                                                     堆的向下调整 
+                                                                  void heapify(vector<int>&arr,int n,int i){
+二叉树遍历前序（根左右）                                             int largest=i;
+void preorder(TreeNode*root){                                     int left=2*i+1; 
+if(!root)return;                                                  int right=2*i+2; 
+visit root;                                                       if(left<n && arr[left]>arr[high]) largest=left; 
+preorder(root->left);                                             if(right<n && arr[right]>arr[high]) largest=right; 
+preorder(root->right);}                                           if(largest!=i){
+                                                                  swap(arr[i],arr[largest]);
+中序（左根右）                                                      heapify=(arr,n,largest);}} 
+void inorder(TreeNode*root){
+if(!root)return;
+inorder(root->left);
+visit root;
+inorder(root->right);}
+
 
 
