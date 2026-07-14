@@ -7,7 +7,7 @@ ListNode*next=cur->next;                                          visit (root);}
 cur->next=prev;
 prev=cur;
 cur=next;                                                        快速排序（partition）
-return prev;}                                                    int partition(vector<int>&arr,int low,int high){
+return prev;}}                                                    int partition(vector<int>&arr,int low,int high){
                                                                  int pivot=arr[high];
 合并有序链表                                                       int i=low-1;
 ListNode*mergeTwolist(ListNode*l1,ListNode*l2){                  for(int j=low;j<high;j++){
