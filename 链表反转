@@ -3,7 +3,7 @@ ListNode*reverselist(ListNode*head){                             void postorder(
 ListNode*prev=nullptr;                                            if(!root)return;                                          visited[v]=ture;
 ListNode*cur=head;                                                postorder(root->left);                                    for(int u:garph[v]){
 while(cur){                                                       postorder(root->right);                                   if(!visited[u]){
-ListNode*next=cur->next;                                          visit root;}                                              dfs(graph,u,visited);}}}
+ListNode*next=cur->next;                                          visit (root);}                                              dfs(graph,u,visited);}}}
 cur->next=prev;
 prev=cur;
 cur=next;                                                        快速排序（partition）
@@ -23,7 +23,7 @@ return l2;}}                                                     堆的向下调
 二叉树遍历前序（根左右）                                             int largest=i;
 void preorder(TreeNode*root){                                     int left=2*i+1; 
 if(!root)return;                                                  int right=2*i+2; 
-visit root;                                                       if(left<n && arr[left]>arr[high]) largest=left; 
+visit (root);                                                       if(left<n && arr[left]>arr[high]) largest=left; 
 preorder(root->left);                                             if(right<n && arr[right]>arr[high]) largest=right; 
 preorder(root->right);}                                           if(largest!=i){
                                                                   swap(arr[i],arr[largest]);
@@ -31,7 +31,7 @@ preorder(root->right);}                                           if(largest!=i)
 void inorder(TreeNode*root){
 if(!root)return;
 inorder(root->left);
-visit root;
+visit (root);
 inorder(root->right);}
 
 
